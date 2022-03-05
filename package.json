@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clickheredigital/amqp.git"
+    "url": "git+https://github.com/clickheredigital/node-amqp.git"
   },
   "keywords": [
     "amqp",
@@ -24,9 +24,9 @@
   "author": "Click Here Digital (IT Department)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/clickheredigital/amqp/issues"
+    "url": "https://github.com/clickheredigital/node-amqp/issues"
   },
-  "homepage": "https://github.com/clickheredigital/amqp#readme",
+  "homepage": "https://github.com/clickheredigital/node-amqp#readme",
   "devDependencies": {
     "@types/amqplib": "^0.8.2",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
