@@ -1,0 +1,43 @@
+{
+  "name": "@clickheredigital/amqp",
+  "version": "1.0.0",
+  "description": "AMQP Client for RabbitMQ processing",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "lint": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clickheredigital/amqp.git"
+  },
+  "keywords": [
+    "amqp",
+    "rabbitmq",
+    "message",
+    "queue",
+    "publish",
+    "subscribe",
+    "pubsub"
+  ],
+  "author": "Click Here Digital (IT Department)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clickheredigital/amqp/issues"
+  },
+  "homepage": "https://github.com/clickheredigital/amqp#readme",
+  "devDependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "ts-node": "^10.6.0",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "amqplib": "^0.8.0"
+  }
+}
