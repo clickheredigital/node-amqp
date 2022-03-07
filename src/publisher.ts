@@ -49,7 +49,7 @@ export default class Publisher {
     }
   }
 
-  async send(queue: string, message: string, queueOpts: amqp.Options.AssertQueue = {}, messageOpts: amqp.Options.Publish = {}) {
+  async send(queue: string, message: string, queueOpts: amqp.Options.AssertQueue = {}, messageOpts: amqp.Options.Publish = {}): Promise<void> {
     if (!this.conn || !this.ch) {
       throw new Error("No open connection");
     }
@@ -63,5 +63,27 @@ export default class Publisher {
       ...this.defaultMessageOptions,
       ...messageOpts
     });
+  }
+
+  sendBatch(queue: string, messages: string[], queueOpts: amqp.Options.AssertQueue = {}, messageOpts: amqp.Options.Publish = {}): Promise<void> {    
+    return new Promise((resolve) => {
+      if (!this.conn || !this.ch) {
+        throw new Error("No open connection");
+      }
+
+      this.ch.assertQueue(queue, {
+        ...this.defaultQueueOptions,
+        ...queueOpts,
+      })
+        .then(() => {
+          for (let i = 0; i < messages.length; i++) {
+            this.ch?.sendToQueue(queue, Buffer.from(messages[i]), {
+              ...this.defaultMessageOptions,
+              ...messageOpts,
+            });
+          }
+        })
+        .then(() => resolve());
+    })
   }
 }
