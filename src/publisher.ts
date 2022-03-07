@@ -84,6 +84,6 @@ export default class Publisher {
           }
         })
         .then(() => resolve());
-    })
+    });
   }
 }

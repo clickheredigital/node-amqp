@@ -1,6 +1,6 @@
 {
   "name": "@clickheredigital/amqp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "AMQP Client for RabbitMQ processing",
   "main": "dist/src/index.js",
   "scripts": {
